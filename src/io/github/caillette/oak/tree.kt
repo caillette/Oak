@@ -12,7 +12,7 @@ package io.github.caillette.oak
 trait AnyTree< TREE : AnyTree< TREE > > {
   fun get( i : Int ) : TREE
   val indices : IntRange
-  fun adopt( vararg children : TREE ) : TREE
+  fun adopt( children : Array< TREE > ) : TREE
 }
 
 abstract class AbstractTree< TREE : AnyTree< TREE > >(

@@ -123,7 +123,7 @@ class LocationPath<
           null,
           LocationStep(
               nodetest = nodetest,
-              predicates = Sequence( array( predicate ) )
+              predicates = Sequence( predicate )
           )
       )
     }
@@ -180,7 +180,7 @@ class LocationStep<
 >(
     val axis : Axis = Axis.Child,
     val nodetest : NODETEST,
-    val predicates : Sequence< ( ( Treepath< NODE > ) -> Boolean ) > = Sequence.empty()
+    val predicates : Sequence< ( ( Treepath< NODE > ) -> Boolean ) > = Sequence()
 ) {
 
   fun toString() : String {

@@ -2,17 +2,17 @@ package io.github.caillette.oak
 
 import io.github.caillette.oak.Kind.*
 import io.github.caillette.oak.Axis.*
+import java.util.ArrayList
 
 
 class Tree(
     public val payload : String,
     brand : Kind,
-    vararg children : Tree
+    children : Array< Tree >
 ) : AbstractTree< Tree >( children ), BrandedTree< Tree, Kind > {
   override val brand = brand
-
-  override fun adopt( vararg children : Tree ) : Tree {
-    throw UnsupportedOperationException( "TODO" )
+  override fun adopt( children : Array< Tree > ) : Tree {
+    return Tree( payload, brand, children )
   }
 }
 
