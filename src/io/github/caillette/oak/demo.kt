@@ -8,10 +8,10 @@ import java.util.ArrayList
 class Tree(
     public val payload : String,
     brand : Kind,
-    children : Array< Tree >
+    children : Sequence< Tree >
 ) : AbstractTree< Tree >( children ), BrandedTree< Tree, Kind > {
   override val brand = brand
-  override fun adopt( children : Array< Tree > ) : Tree {
+  override fun adopt( children : Sequence< Tree > ) : Tree {
     return Tree( payload, brand, children )
   }
 }

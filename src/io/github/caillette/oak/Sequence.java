@@ -39,6 +39,7 @@ public final class Sequence< ELEMENT > {
     }
   }
 
+  @NotNull
   public ELEMENT get( final int index ) {
     return elements[ index ] ;
   }

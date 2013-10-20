@@ -30,7 +30,7 @@ trait TreeBrand<
 }
 
 /**
- * A complex predicate on a {@link BrandeTree tree}.
+ * A complex predicate on a {@link BrandedTree tree}.
  * The term of "Location Path" has the same meaning as in XPath specification.
  */
 class LocationPath<

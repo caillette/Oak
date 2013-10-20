@@ -10,21 +10,14 @@ package io.github.caillette.oak
  * </pre>
  */
 trait AnyTree< TREE : AnyTree< TREE > > {
-  fun get( i : Int ) : TREE
-  val indices : IntRange
-  fun adopt( children : Array< TREE > ) : TREE
+  val children : Sequence< TREE >
+  fun adopt( children : Sequence< TREE > ) : TREE
 }
 
 abstract class AbstractTree< TREE : AnyTree< TREE > >(
-    children : Array< TREE >
+    override val children : Sequence< TREE >
 ) : AnyTree< TREE > {
 
-  private val children : Array< TREE > = children.copyOf()
-
-  override fun get( i : Int ) : TREE { return children[ i ] }
-
-  override val indices : IntRange
-    get() = children.indices
 }
 
 
@@ -38,7 +31,7 @@ class Treepath< TREE : AnyTree< TREE > >(
   }
 
   fun Treepath( previous : Treepath< TREE >, indexInPrevious : Int ) {
-    Treepath( previous, indexInPrevious, previous.treeAtEnd[ indexInPrevious ] )
+    Treepath( previous, indexInPrevious, previous.treeAtEnd.children[ indexInPrevious ] )
   }
 }
 
