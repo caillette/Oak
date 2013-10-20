@@ -194,8 +194,8 @@ class LocationStep<
 
   fun toString() : String {
     var result = axis.name() + "::" + nodetest.name() + "["
-    for( predicate in predicates.indices ) {
-      if( predicate > 0 ) result += ","
+    for( index in predicates.indices() ) {
+      if( index > 0 ) result += ","
       result += "?"
     }
     result += "]"
