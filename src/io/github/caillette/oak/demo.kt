@@ -6,13 +6,12 @@ import java.util.ArrayList
 
 
 class Tree(
-    public val payload : String,
-    brand : Kind,
-    children : Sequence< Tree >
+    children : Sequence< Tree >,
+    override val brand : Kind,
+    public val payload : String
 ) : AbstractTree< Tree >( children ), BrandedTree< Tree, Kind > {
-  override val brand = brand
   override fun adopt( children : Sequence< Tree > ) : Tree {
-    return Tree( payload, brand, children )
+    return Tree( children, brand, payload )
   }
 }
 
