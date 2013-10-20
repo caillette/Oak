@@ -20,7 +20,7 @@ enum class Kind : TreeBrand< Tree, Kind > {
   level
   title
 
-  // TODO: move all following stuff to TreeBrand trait.
+  // TODO: Solve the typing problem preventing from moving all of that to the trait.
 
   fun plus() : LocationPath< Tree, Kind > {
     return LocationPath.of( this )

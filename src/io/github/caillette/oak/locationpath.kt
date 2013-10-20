@@ -23,9 +23,18 @@ trait TreeBrand<
   fun mod( right : ( Treepath< TREE > ) -> Boolean ) : LocationPath< TREE, BRAND > /*{
     return LocationPath.addPredicate( this, right )
   }*/
-  fun div( right : LocationPath< TREE, BRAND > ) : LocationPath< TREE, BRAND >
-  fun div( right : BRAND ) : LocationPath< TREE, BRAND >
-  fun div( right : Axis ) : IncompleteLocationPath< TREE, BRAND >
+
+  fun div( right : LocationPath< TREE, BRAND > ) : LocationPath< TREE, BRAND > /*{
+    return LocationPath.addLocationPath( this, right )
+  }*/
+
+  fun div( right : BRAND ) : LocationPath< TREE, BRAND > /*{
+    return LocationPath.addNodetest( this, right )
+  }*/
+
+  fun div( right : Axis ) : IncompleteLocationPath< TREE, BRAND > /*{
+    return LocationPath.addAxis( this, right )
+  }*/
 
 }
 
